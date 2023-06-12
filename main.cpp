@@ -9,7 +9,7 @@
  */
 
 
- // Support any signed number (32-bit by default)
+// Support any signed number (32-bit by default).
 template<class T = int32_t>
 void PrintSignedBinary(T number)
 {
@@ -19,12 +19,12 @@ void PrintSignedBinary(T number)
 
     for (int32_t bitIndex = bits - 1; bitIndex >= 0; --bitIndex)
     {
-        if (number & (T)1 << bitIndex)
+        if (number >> bitIndex & 1)
             std::cout << "1";
         else
             std::cout << "0";
 
-        // Group bits by 4-bit groups for readability
+        // Group bits by 4-bit groups for readability.
         if (bitIndex % 4 == 0)
             std::cout << " ";
     }
